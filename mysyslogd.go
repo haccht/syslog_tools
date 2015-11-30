@@ -31,7 +31,7 @@ func (h *handler) mainLoop() {
 }
 
 func main() {
-	address := flag.String("addr", ":5514", "address")
+	address := flag.String("addr", ":514", "address")
 	flag.Parse()
 
 	server := syslog.NewServer()
