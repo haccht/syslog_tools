@@ -363,7 +363,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	message := strings.Join(args, " ")
 	priority, err := parsePriority(opts.Priority)
 	if err != nil {
 		log.Print(err)
@@ -371,5 +370,14 @@ func main() {
 	}
 
 	w, err := Dial(opts.Connection, opts.Address, priority, opts.Tag, opts.Hostname)
-	w.Write([]byte(message))
+	if err != nil {
+		log.Print(err)
+		os.Exit(1)
+	}
+	defer w.Close()
+
+	message := strings.Join(args, " ")
+	if len(message) > 0 {
+		w.Write([]byte(message))
+	}
 }
