@@ -3,31 +3,27 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/ziutek/syslog"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/ziutek/syslog"
 )
 
-type handler struct {
-	*syslog.BaseHandler
-}
-
-func newHandler() *handler {
-	h := handler{syslog.NewBaseHandler(5, nil, false)}
-	go h.mainLoop()
-	return &h
-}
-
-func (h *handler) mainLoop() {
-	for {
-		m := h.Get()
-		if m == nil {
-			break
+func newHandler() *syslog.BaseHandler {
+	h := syslog.NewBaseHandler(5, nil, false)
+	go func() {
+		defer h.End()
+		for {
+			m := h.Get()
+			if m == nil {
+				break
+			}
+			fmt.Println(m)
 		}
-		fmt.Println(m)
-	}
-	h.End()
+	}()
+
+	return h
 }
 
 func main() {
