@@ -1,4 +1,6 @@
 github.com/jessevdk/go-flags v1.4.0 h1:4IU2WS7AumrZ/40jfhf4QVDMsQwqA7VEHozFRrGARJA=
 github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
+github.com/racksec/srslog v0.0.0-20180709174129-a4725f04ec91 h1:3hihQaxFTzBL1t5bTYaPhEwL4rxD3zjSgu4afGzgQqI=
+github.com/racksec/srslog v0.0.0-20180709174129-a4725f04ec91/go.mod h1:eTUUVgGNb+mCsEJeJnwl/Kaaem9IXKa1ZZL5zN4fTag=
 github.com/ziutek/syslog v0.0.0-20180426113420-8a9fdf1a8529 h1:/oj7lpZQM7OVonCb6/BPA2BHasfCLg4i5kTHCpGeM7Y=
 github.com/ziutek/syslog v0.0.0-20180426113420-8a9fdf1a8529/go.mod h1:fbCsOxJwPT8dcj9lYG4Th+cUkWxNqLnFAAGcYbVmlpc=
